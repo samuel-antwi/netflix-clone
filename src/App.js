@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import Login from './pages/Login';
+import LoginHelp from './pages/LoginHelp';
+import Register from './pages/Register';
+import LandingPage from './pages/LandingPage';
+import VerifyEmail from './pages/VerifyEmail';
+import ResendEmailLinkSuccess from './pages/ResendEmailLinkSuccess';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/register' component={Register} />
+        <Route path='/movies' component={LandingPage} />
+        <Route path='/LoginHelp' component={LoginHelp} />
+        <Route path='/login' component={Login} />
+        <Route path='/verify-email' component={VerifyEmail} />
+        <Route path='/success' component={ResendEmailLinkSuccess} />
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;
