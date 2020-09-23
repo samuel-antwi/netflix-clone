@@ -26,6 +26,7 @@ const NavBar = () => {
 
 export default NavBar;
 
+// Component style
 const Styles = styled.div`
   .main-nav {
     background: transparent;

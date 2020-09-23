@@ -46,6 +46,7 @@ const AuthContextProvider = (props) => {
     history.push('/');
   };
 
+  // Resend a verification email to user
   const resendEmailVerificationLink = async () => {
     const user = await auth().currentUser;
     user.sendEmailVerification();

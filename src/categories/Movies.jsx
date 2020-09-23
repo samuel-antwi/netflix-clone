@@ -24,6 +24,7 @@ const Movies = () => {
 
   const history = useHistory();
 
+  // Fetch Netflix original
   useEffect(() => {
     const fetchAPI = async () => {
       try {
@@ -128,7 +129,7 @@ const Movies = () => {
     fetchAPI();
   }, []);
 
-  // Yoytube options
+  // Youtube options
   const opts = {
     height: '390',
     width: '100%',
@@ -155,20 +156,6 @@ const Movies = () => {
         .catch((error) => console.log(error));
     }
   };
-
-  // const playTrailer = (name) => {
-  //   if (trailerURL) {
-  //     setTrailerURL('');
-  //   } else {
-  //     movieTrailer(name || 'breaking bad')
-  //       .then((url) => {
-  //         const urlParams = new URLSearchParams(new URL(url).search);
-  //         setTrailerURL(urlParams.get('v'));
-  //         window.scrollTo(0, 0);
-  //       })
-  //       .catch((error) => console.log(error));
-  //   }
-  // };
 
   return (
     <React.Fragment>
@@ -289,6 +276,7 @@ const Movies = () => {
 
 export default Movies;
 
+// Component style using styled-components
 const Styles = styled.div`
   background: var(--movies);
   .netflix-originals,

@@ -12,6 +12,7 @@ const LoginHelp = () => {
   const [email, emailInputOption, resetemail] = useInput('');
   const [error, setError] = useState('');
 
+  // Password reset
   const resetPassword = async (e) => {
     e.preventDefault();
     try {
@@ -59,6 +60,7 @@ const LoginHelp = () => {
 
 export default LoginHelp;
 
+// Component styles using styled-components
 const Styles = styled.div`
   .login-help {
     background: url(${loginhelp});
@@ -91,7 +93,6 @@ const Styles = styled.div`
     }
   }
   .btn {
-    /* color: var(--color-red); */
     font-size: 20px;
   }
   @media (max-width: 768px) {

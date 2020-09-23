@@ -16,8 +16,8 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
-      setIsLoading(true);
       await auth()
         .signInWithEmailAndPassword(email, password)
         .then(() => {
@@ -33,6 +33,7 @@ const Login = () => {
       setIsLoading(false);
     } catch (error) {
       setError(error.message);
+      setIsLoading(false);
     }
   };
 

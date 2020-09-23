@@ -19,16 +19,17 @@ const LandingPage = () => {
   const { signOut } = useContext(AuthContext);
   const [modal, setModal] = useState(false);
 
+  // Background banner when logged in. This changes on every page refresh
   useEffect(() => {
     const fetchAPI = async () => {
       try {
         const response = await axios(
           `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`
         );
+        // Get a random background poster on every page refresh
         const getRandom = Math.floor(
           Math.random() * response.data.results.length
         );
-        console.log(response.data.results[getRandom]);
         setBanner(response.data.results[getRandom]);
       } catch (error) {
         console.log(error);
@@ -37,6 +38,7 @@ const LandingPage = () => {
     fetchAPI();
   }, []);
 
+  // A function to create an elipsis for a movies description
   const description = (overview) => {
     if (overview?.length > 10) {
       return overview.substring(0, 90) + '...';
@@ -45,6 +47,7 @@ const LandingPage = () => {
     }
   };
 
+  // Afunction to change the navbar background when the scroll position is greater than 100px
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) {
@@ -148,6 +151,7 @@ const LandingPage = () => {
 
 export default LandingPage;
 
+// Component style using styled-components
 const Styles = styled.div`
   .btn:focus {
     outline: none;

@@ -19,6 +19,7 @@ const Register = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  // User registration
   const handleRegistration = async (e) => {
     e.preventDefault();
     if (username) {
@@ -118,6 +119,7 @@ const Register = () => {
 
 export default Register;
 
+// Component style
 const Styles = styled.div`
   .register {
     padding-top: 150px;

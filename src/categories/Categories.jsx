@@ -4,11 +4,11 @@ import { Card } from 'react-bootstrap';
 
 const imageBaseURL = 'https://image.tmdb.org/t/p/original/';
 
+// A component that renders individual movies in a row
 const Categories = ({ isLargeRow, playTrailer, movie }) => {
   if (!Object.keys(movie).length) {
     return 'loading...';
   }
-
   return (
     <React.Fragment>
       <Styles>
@@ -29,6 +29,7 @@ const Categories = ({ isLargeRow, playTrailer, movie }) => {
 
 export default Categories;
 
+// Componet style
 const Styles = styled.div`
   .card {
     position: relative;

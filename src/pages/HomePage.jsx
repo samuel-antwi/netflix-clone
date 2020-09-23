@@ -14,7 +14,6 @@ const HomePage = () => {
   const history = useHistory();
 
   // Check if email is valid whilst user is typing...
-
   window.addEventListener('keyup', () => {
     const validateEmail = (email) => {
       const re = /\S+@\S+\.\S+/;
@@ -32,6 +31,8 @@ const HomePage = () => {
     return re.test(email);
   };
 
+  // A function to handle the email address typed by the user from the home page
+  // If email is valid and meets all requirement, the user will be taken to the registration page
   const handleRegister = (e) => {
     e.preventDefault();
     if (validateEmail(registrationEmail)) {
@@ -93,6 +94,8 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// Component style using styled-components
 const Styles = styled.div`
   .home-page {
     background: url(${homebg});
