@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
-import homebg from '../assests/images/homebg.png';
+import homebg from '../assests/images/homebg.jpg';
 import { Container } from 'react-bootstrap';
 import { BsChevronRight } from 'react-icons/bs';
 import { useHistory } from 'react-router-dom';
@@ -81,9 +81,7 @@ const HomePage = () => {
                     </small>
                   )}
                 </form>
-                <h4 className=' py-3'>
-                  Ready to watch? Enter your email to get started.
-                </h4>
+                <h4 className=' py-3'>Ready to watch? Enter your email to get started.</h4>
               </div>
             </Container>
           </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import homebg from '../assests/images/homebg.png';
+import homebg from '../assests/images/homebg.jpg';
 import { Container, Form, Alert } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import useInput from '../useInput';
@@ -49,30 +49,18 @@ const Login = () => {
                   <h1 className='my-4'>Sign In</h1>
                   {error && <Alert variant='danger'>{error}</Alert>}
                   <Form.Group>
-                    <Form.Control
-                      {...emailInputOption}
-                      placeholder='Your email'
-                    />
+                    <Form.Control {...emailInputOption} placeholder='Your email' />
                   </Form.Group>
                   <Form.Group>
-                    <Form.Control
-                      {...passwordInputOption}
-                      type='password'
-                      placeholder='Password'
-                    />
+                    <Form.Control {...passwordInputOption} type='password' placeholder='Password' />
                   </Form.Group>
-                  <button
-                    type='submit'
-                    className='btn btn-block'
-                    disabled={isLoading}>
+                  <button type='submit' className='btn btn-block' disabled={isLoading}>
                     {isLoading ? 'Signing In...' : 'Sign In'}
                   </button>
                   <div className='d-flex justify-content-between'>
                     <div className='form-check'>
                       <input type='checkbox' className='form-check-input' />
-                      <label className='form-check-label pt-4 text-muted'>
-                        Remember me
-                      </label>
+                      <label className='form-check-label pt-4 text-muted'>Remember me</label>
                     </div>
                     <div className='pt-4'>
                       <Link className='text-light' to='LoginHelp'>
@@ -83,9 +71,7 @@ const Login = () => {
                   <div className='py-3'>
                     <p className='lead text-muted'>
                       New to Netlifix?
-                      <Link
-                        className='text-white ml-2 font-weight-bold'
-                        to='register'>
+                      <Link className='text-white ml-2 font-weight-bold' to='register'>
                         Sign up now
                       </Link>
                     </p>
