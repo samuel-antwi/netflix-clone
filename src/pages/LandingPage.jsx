@@ -27,9 +27,7 @@ const LandingPage = () => {
           `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`
         );
         // Get a random background poster on every page refresh
-        const getRandom = Math.floor(
-          Math.random() * response.data.results.length
-        );
+        const getRandom = Math.floor(Math.random() * response.data.results.length);
         setBanner(response.data.results[getRandom]);
       } catch (error) {
         console.log(error);
@@ -78,16 +76,11 @@ const LandingPage = () => {
           }}
           className='landing'>
           <div className='overlay'>
-            <div
-              style={{ background: handleShow ? 'black' : null }}
-              className='page-nav py-3'>
+            <div style={{ background: handleShow ? 'black' : null }} className='page-nav py-3'>
               <div className='page-nav-items'>
                 <div>
                   <Link className='app-logo ' to={user ? 'movies' : '/'}>
                     NETFLIX
-                  </Link>
-                  <Link className='my-list mx-5 text-light lead' to='/my-list'>
-                    My List
                   </Link>
                 </div>
                 {user && (
@@ -123,9 +116,7 @@ const LandingPage = () => {
                   <Card className='py-5'>
                     <Card.Body>
                       <p className='lead'>{overview}</p>
-                      <button
-                        onClick={handleModalClose}
-                        className='btn btn-outline-secondary'>
+                      <button onClick={handleModalClose} className='btn btn-outline-secondary'>
                         Close
                       </button>
                     </Card.Body>
@@ -138,7 +129,7 @@ const LandingPage = () => {
                 <button onClick={handleModalShow} className='btn'>
                   More Info
                 </button>
-                <button className='btn'>Add to list</button>
+                {/* <button className='btn'>Add to list</button> */}
               </div>
             </div>
           </div>

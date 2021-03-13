@@ -28,9 +28,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const response = await axios(
-          `${baseURL}/discover/tv?api_key=${API_KEY}&with_networks=213`
-        );
+        const response = await axios(`${baseURL}/discover/tv?api_key=${API_KEY}&with_networks=213`);
         setNetflixOriginals(response.data.results);
       } catch (error) {
         console.log(error);
@@ -43,9 +41,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const response = await axios(
-          `${baseURL}/trending/all/week?api_key=${API_KEY}`
-        );
+        const response = await axios(`${baseURL}/trending/all/week?api_key=${API_KEY}`);
         setTrending(response.data.results);
       } catch (error) {
         console.log(error);
@@ -58,9 +54,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const response = await axios(
-          `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=28`
-        );
+        const response = await axios(`${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=28`);
         setAction(response.data.results);
       } catch (error) {
         console.log(error);
@@ -73,9 +67,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const response = await axios(
-          `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=35`
-        );
+        const response = await axios(`${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=35`);
         setCommedy(response.data.results);
       } catch (error) {
         console.log(error);
@@ -88,9 +80,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const response = await axios(
-          `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=27`
-        );
+        const response = await axios(`${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=27`);
         setHorror(response.data.results);
       } catch (error) {
         console.log(error);
@@ -141,9 +131,9 @@ const Movies = () => {
 
   // Play trailer
   const playTrailer = (name) => {
-    if (!user?.emailVerified) {
-      history.push('/verify-email');
-    }
+    // if (!user?.emailVerified) {
+    //   history.push('/verify-email');
+    // }
     if (trailerURL) {
       setTrailerURL('');
     } else {
@@ -183,13 +173,7 @@ const Movies = () => {
             <h2 className='text-white'>Netflix Originals</h2>
             <div className='netflix-originals'>
               {netflixOriginals.map((movie) => {
-                return (
-                  <Categories
-                    key={movie.id}
-                    movie={movie}
-                    playTrailer={playTrailer}
-                  />
-                );
+                return <Categories key={movie.id} movie={movie} playTrailer={playTrailer} />;
               })}
             </div>
           </div>
@@ -198,13 +182,7 @@ const Movies = () => {
             <h2 className='text-white'>Top Rated</h2>
             <div className='top'>
               {topRated.map((movie) => {
-                return (
-                  <Categories
-                    key={movie.id}
-                    movie={movie}
-                    playTrailer={playTrailer}
-                  />
-                );
+                return <Categories key={movie.id} movie={movie} playTrailer={playTrailer} />;
               })}
             </div>
           </div>
@@ -213,13 +191,7 @@ const Movies = () => {
             <h2 className='text-white'>Action Movies</h2>
             <div className='top'>
               {action.map((movie) => {
-                return (
-                  <Categories
-                    key={movie.id}
-                    movie={movie}
-                    playTrailer={playTrailer}
-                  />
-                );
+                return <Categories key={movie.id} movie={movie} playTrailer={playTrailer} />;
               })}
             </div>
           </div>
@@ -228,13 +200,7 @@ const Movies = () => {
             <h2 className='text-white'>Commedy</h2>
             <div className='top'>
               {commedy.map((movie) => {
-                return (
-                  <Categories
-                    key={movie.id}
-                    movie={movie}
-                    playTrailer={playTrailer}
-                  />
-                );
+                return <Categories key={movie.id} movie={movie} playTrailer={playTrailer} />;
               })}
             </div>
           </div>
@@ -243,13 +209,7 @@ const Movies = () => {
             <h2 className='text-white'>Horror</h2>
             <div className='top'>
               {horror.map((movie) => {
-                return (
-                  <Categories
-                    key={movie.id}
-                    movie={movie}
-                    playTrailer={playTrailer}
-                  />
-                );
+                return <Categories key={movie.id} movie={movie} playTrailer={playTrailer} />;
               })}
             </div>
           </div>
@@ -258,13 +218,7 @@ const Movies = () => {
             <h2 className='text-white'>Romance</h2>
             <div className='top'>
               {romance.map((movie) => {
-                return (
-                  <Categories
-                    key={movie.id}
-                    movie={movie}
-                    playTrailer={playTrailer}
-                  />
-                );
+                return <Categories key={movie.id} movie={movie} playTrailer={playTrailer} />;
               })}
             </div>
           </div>

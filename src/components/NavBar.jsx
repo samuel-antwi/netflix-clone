@@ -14,9 +14,14 @@ const NavBar = () => {
             NETFLIX
           </a>
           {!user && (
-            <Link className='btn' to='/login'>
-              Login
-            </Link>
+            <div>
+              <Link style={{ marginRight: '10px' }} className='btn' to='/login'>
+                Login
+              </Link>
+              <Link className='btn' to='/movies'>
+                Demo
+              </Link>
+            </div>
           )}
         </div>
       </div>
