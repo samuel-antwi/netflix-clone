@@ -8,11 +8,7 @@ import { EmailContext } from '../context/EmailContext';
 import NavBar from '../components/NavBar';
 
 const Register = () => {
-  const {
-    registrationEmail,
-    handleChange,
-    resetRegistrationEmail,
-  } = useContext(EmailContext);
+  const { registrationEmail, handleChange, resetRegistrationEmail } = useContext(EmailContext);
   const history = useHistory();
   const [username, usernameInputOption, resetUserName] = useInput('');
   const [password, passwordInputOption, resetPassword] = useInput('');
@@ -64,35 +60,34 @@ const Register = () => {
                 <div>
                   <h3>Final Step</h3>
                   <p>
-                    You are almost there, just choose a username and password to
-                    start watching.
+                    You are almost there, just choose a username and password to start watching.
                   </p>
                 </div>
               ) : (
                 <div>
                   <h3>Create an Account.</h3>
                   <p>
-                    Creating an account is very simple. Just fill in the form
-                    below to start watching.
+                    Creating an account is very simple. Just fill in the form below to start
+                    watching.
                   </p>
                 </div>
               )}
               {error && <Alert variant='danger'>{error}</Alert>}
               <Form.Group>
+                <Form.Group>
+                  <Form.Control
+                    //   This input field uses Email context hook which receives the user input from the home page.
+                    value={registrationEmail}
+                    onChange={handleChange}
+                    className='p-4'
+                    placeholder='Email address'
+                  />
+                </Form.Group>
                 <Form.Control
                   {...usernameInputOption}
                   className='p-4'
                   type='text'
                   placeholder='Username'
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Control
-                  //   This input field uses Email context hook which receives the user input from the home page.
-                  value={registrationEmail}
-                  onChange={handleChange}
-                  className='p-4'
-                  placeholder='Email address'
                 />
               </Form.Group>
               <Form.Group>
@@ -103,10 +98,7 @@ const Register = () => {
                   placeholder='Password'
                 />
               </Form.Group>
-              <button
-                className='btn btn-block p-3'
-                type='submit'
-                disabled={isLoading}>
+              <button className='btn btn-block p-3' type='submit' disabled={isLoading}>
                 {isLoading ? 'Registering...' : 'Register'}
               </button>
             </Form>
